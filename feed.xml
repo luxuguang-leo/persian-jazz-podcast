@@ -5,10 +5,10 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 15:27:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 15:53:57 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-20260507.jpg"/>
+    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-202605072328.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -75,6 +75,18 @@ Collection: WeAreJazz  |  Duration: 1:54:29</description>
       <enclosure length="111113829" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-iranian-jazz-when-dancing-becomes-crying.m4a"/>
       <itunes:duration>1:54:29</itunes:duration>
       <itunes:episode>5</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour Japanese Jazz – “Sakura Sakura” (さくら さくら) ｜ Lo-Fi Jazz</title>
+      <description>1 Hour Japanese Jazz – “Sakura Sakura” (さくら さくら) ｜ Lo-Fi Jazz
+
+Collection: WeAreJazz  |  Duration: 1:19:08</description>
+      <guid isPermaLink="false">af04905395f9576343081ea530c1fb6c</guid>
+      <pubDate>Thu, 07 May 2026 15:52:16 +0000</pubDate>
+      <enclosure length="76797658" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-japanese-jazz-sakura-sakura-さくら-さくら-lo-fi-jazz.m4a"/>
+      <itunes:duration>1:19:08</itunes:duration>
+      <itunes:episode>6</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
