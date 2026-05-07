@@ -3,12 +3,12 @@
   <channel>
     <title>波斯爵士电台 Persian Jazz Radio</title>
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
-    <description>Persian jazz compilations.</description>
+    <description>Persian jazz compilations — Qajar-era melodies meet modern jazz fusion.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 16:08:14 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 16:20:59 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-202605072328.jpg"/>
+    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -54,18 +54,6 @@ Collection: QajarJazz  |  Duration: 1:29:30</description>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
-      <title>1 Hour Azerbaijan Jazz - “Sakineh Dayi Ghezi”</title>
-      <description>1 Hour Azerbaijan Jazz - “Sakineh Dayi Ghezi”
-
-Collection: WeAreJazz  |  Duration: 58:20</description>
-      <guid isPermaLink="false">226a30dc9938fef8767870ac1a177357</guid>
-      <pubDate>Wed, 07 May 2026 00:05:00 +0000</pubDate>
-      <enclosure length="56625319" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-azerbaijan-jazz---sakineh-dayi-ghezi.m4a"/>
-      <itunes:duration>58:20</itunes:duration>
-      <itunes:episode>4</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
       <title>1 Hour Iranian Jazz  ｜ When Dancing Becomes Crying</title>
       <description>1 Hour Iranian Jazz  ｜ When Dancing Becomes Crying
 
@@ -74,31 +62,31 @@ Collection: WeAreJazz  |  Duration: 1:54:29</description>
       <pubDate>Wed, 07 May 2026 00:05:00 +0000</pubDate>
       <enclosure length="111113829" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-iranian-jazz-when-dancing-becomes-crying.m4a"/>
       <itunes:duration>1:54:29</itunes:duration>
+      <itunes:episode>4</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour Azerbaijan Jazz - “Sakineh Dayi Ghezi”</title>
+      <description>1 Hour Azerbaijan Jazz - “Sakineh Dayi Ghezi”
+
+Collection: WeAreJazz  |  Duration: 58:20</description>
+      <guid isPermaLink="false">226a30dc9938fef8767870ac1a177357</guid>
+      <pubDate>Wed, 07 May 2026 00:05:00 +0000</pubDate>
+      <enclosure length="56625319" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-azerbaijan-jazz---sakineh-dayi-ghezi.m4a"/>
+      <itunes:duration>58:20</itunes:duration>
       <itunes:episode>5</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
-      <title>1 Hour Japanese Jazz – “Sakura Sakura” (さくら さくら) ｜ Lo-Fi Jazz</title>
-      <description>1 Hour Japanese Jazz – “Sakura Sakura” (さくら さくら) ｜ Lo-Fi Jazz
+      <title>1 Hour Persian Jazz - Shiraz</title>
+      <description>1 Hour Persian Jazz - Shiraz
 
-Collection: WeAreJazz  |  Duration: 1:19:08</description>
-      <guid isPermaLink="false">af04905395f9576343081ea530c1fb6c</guid>
-      <pubDate>Thu, 07 May 2026 15:52:16 +0000</pubDate>
-      <enclosure length="76797658" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-japanese-jazz-sakura-sakura-さくら-さくら-lo-fi-jazz.m4a"/>
-      <itunes:duration>1:19:08</itunes:duration>
+Collection: WeAreJazz  |  Duration: 1:25:13</description>
+      <guid isPermaLink="false">83826208cf5bba2d3db7a909f9ba79f9</guid>
+      <pubDate>Thu, 07 May 2026 16:20:59 +0000</pubDate>
+      <enclosure length="82699046" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-persian-jazz---shiraz.m4a"/>
+      <itunes:duration>1:25:13</itunes:duration>
       <itunes:episode>6</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
-      <title>1 Hour Jazz Playlist for Focus and Deep Work ☕</title>
-      <description>1 Hour Jazz Playlist for Focus and Deep Work ☕
-
-Collection: WeAreJazz  |  Duration: 1:00:39</description>
-      <guid isPermaLink="false">d2516dd01236df96ba2b5574ed180c65</guid>
-      <pubDate>Thu, 07 May 2026 16:06:31 +0000</pubDate>
-      <enclosure length="58865274" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-jazz-playlist-for-focus-and-deep-work.m4a"/>
-      <itunes:duration>1:00:39</itunes:duration>
-      <itunes:episode>7</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
