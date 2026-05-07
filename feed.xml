@@ -5,10 +5,10 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 07 May 2026 14:27:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 07 May 2026 15:07:45 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover.jpg"/>
+    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-2026050723.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -30,18 +30,6 @@ Collection: WeAreJazz  |  Duration: 1:00:49</description>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
-      <title>Booye mahe mehr (Persian Jazz) ترانه ی بوی ماه مهر</title>
-      <description>Booye mahe mehr (Persian Jazz) ترانه ی بوی ماه مهر
-
-Collection: WeAreJazz  |  Duration: 7:31</description>
-      <guid isPermaLink="false">86a79a09a920ffd23a3941ab3ea5b168</guid>
-      <pubDate>Tue, 06 May 2026 12:00:00 +0000</pubDate>
-      <enclosure length="7312846" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/Booye mahe mehr (Persian Jazz) ترانه ی بوی ماه مهر.m4a"/>
-      <itunes:duration>7:31</itunes:duration>
-      <itunes:episode>2</itunes:episode>
-      <itunes:episodeType>full</itunes:episodeType>
-    </item>
-    <item>
       <title>Persian Jazz · The Last Night of Shah Naser al-Din ｜ 1 Hour of Imperial Twilight</title>
       <description>Persian Jazz · The Last Night of Shah Naser al-Din ｜ 1 Hour of Imperial Twilight
 
@@ -50,7 +38,7 @@ Collection: QajarJazz  |  Duration: 1:08:57</description>
       <pubDate>Tue, 06 May 2026 12:00:00 +0000</pubDate>
       <enclosure length="67788478" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/persian-jazz-the-last-night-of-shah-naser-al-din-1-hour-of-i.m4a"/>
       <itunes:duration>1:08:57</itunes:duration>
-      <itunes:episode>3</itunes:episode>
+      <itunes:episode>2</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
@@ -62,7 +50,7 @@ Collection: QajarJazz  |  Duration: 1:29:30</description>
       <pubDate>Tue, 06 May 2026 12:00:00 +0000</pubDate>
       <enclosure length="87737634" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/the-last-night-of-shah-naser-al-din-1-hour-persian-jazz-1896.m4a"/>
       <itunes:duration>1:29:30</itunes:duration>
-      <itunes:episode>4</itunes:episode>
+      <itunes:episode>3</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
@@ -74,7 +62,7 @@ Collection: WeAreJazz  |  Duration: 58:20</description>
       <pubDate>Wed, 07 May 2026 00:05:00 +0000</pubDate>
       <enclosure length="56625319" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-azerbaijan-jazz---sakineh-dayi-ghezi.m4a"/>
       <itunes:duration>58:20</itunes:duration>
-      <itunes:episode>5</itunes:episode>
+      <itunes:episode>4</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
     <item>
@@ -86,7 +74,7 @@ Collection: WeAreJazz  |  Duration: 1:54:29</description>
       <pubDate>Wed, 07 May 2026 00:05:00 +0000</pubDate>
       <enclosure length="111113829" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-iranian-jazz-when-dancing-becomes-crying.m4a"/>
       <itunes:duration>1:54:29</itunes:duration>
-      <itunes:episode>6</itunes:episode>
+      <itunes:episode>5</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
