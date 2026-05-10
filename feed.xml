@@ -5,7 +5,7 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations — Qajar-era melodies meet modern jazz fusion.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 10 May 2026 01:08:43 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 01:11:32 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
     <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover.jpg"/>
@@ -143,6 +143,22 @@ Collection: WeAreJazz  |  Duration: 1:00:52</description>
       <enclosure length="59090457" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-persian-jazz-aghrabe-zolfe-kaj-عقرب-زلف-کجت-by-qajar.m4a"/>
       <itunes:duration>1:00:52</itunes:duration>
       <itunes:episode>8</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour Persian Jazz – ＂Del Shekasteh＂ ｜ Lo-Fi Jazz Original</title>
+      <description>1 Hour Persian Jazz – ＂Del Shekasteh＂ ｜ Lo-Fi Jazz Original
+
+心碎主题的Lo-fi爵士原创。以破碎的心为灵感，音乐在忧伤与治愈之间徘徊。钢琴和弦如叹息般重复，微弱的低保真底噪提供了怀旧的温度。不是悲伤的音乐，而是理解了悲伤之后的平静。
+
+
+Collection: WeAreJazz  |  Duration: 1:02:20</description>
+      <itunes:summary>心碎主题的Lo-fi爵士原创。以破碎的心为灵感，音乐在忧伤与治愈之间徘徊。钢琴和弦如叹息般重复，微弱的低保真底噪提供了怀旧的温度。不是悲伤的音乐，而是理解了悲伤之后的平静。</itunes:summary>
+      <guid isPermaLink="false">0a6d09ddf592178ff6380e74806a3d28</guid>
+      <pubDate>Sun, 10 May 2026 01:11:32 +0000</pubDate>
+      <enclosure length="60511376" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-persian-jazz-del-shekasteh-lo-fi-jazz-original.m4a"/>
+      <itunes:duration>1:02:20</itunes:duration>
+      <itunes:episode>9</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
