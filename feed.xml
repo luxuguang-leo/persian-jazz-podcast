@@ -5,10 +5,10 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 09 May 2026 16:05:11 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2026 01:03:42 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-202605100005.jpg"/>
+    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -87,6 +87,18 @@ Collection: WeAreJazz  |  Duration: 1:25:13</description>
       <enclosure length="82699046" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-persian-jazz---shiraz.m4a"/>
       <itunes:duration>1:25:13</itunes:duration>
       <itunes:episode>6</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour Persian Jazz lofi ｜ Hottea (Addicted)</title>
+      <description>1 Hour Persian Jazz lofi ｜ Hottea (Addicted)
+
+Collection: WeAreJazz  |  Duration: 57:38</description>
+      <guid isPermaLink="false">89d14b64f214ec230a468d98284f69f9</guid>
+      <pubDate>Sun, 10 May 2026 01:03:42 +0000</pubDate>
+      <enclosure length="55941947" type="audio/mp4" url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-persian-jazz-lofi-hottea-addicted.m4a"/>
+      <itunes:duration>57:38</itunes:duration>
+      <itunes:episode>7</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
