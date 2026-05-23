@@ -5,7 +5,7 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 22 May 2026 15:38:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 15:10:30 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
     <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover.jpg"/>
@@ -291,6 +291,22 @@ Collection: WeAreJazz  |  Duration: 1:35:58</description>
       <itunes:duration>1:35:58</itunes:duration>
       <itunes:season>1</itunes:season>
       <itunes:episode>17</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour of Iranian Jazz – ＂King Lotf Ali＂ ｜ (Chill, Relax &amp; Focus) Combo</title>
+      <description>1 Hour of Iranian Jazz – ＂King Lotf Ali＂ ｜ (Chill, Relax &amp; Focus) Combo
+
+🎵 1 Hour of Iranian Jazz – ＂King Lotf Ali＂ ｜ (Chill, Relax &amp; F
+
+Collection: WeAreJazz  |  Duration: 1:02:20</description>
+      <itunes:summary>🎵 1 Hour of Iranian Jazz – ＂King Lotf Ali＂ ｜ (Chill, Relax &amp; F</itunes:summary>
+      <guid isPermaLink="false">b2922a46066eab12363920671e1159eb</guid>
+      <pubDate>Sat, 23 May 2026 15:10:30 +0000</pubDate>
+      <enclosure url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-of-iranian-jazz-king-lotf-ali-chill-relax-focus-combo.m4a" length="60509971" type="audio/mp4"/>
+      <itunes:duration>1:02:20</itunes:duration>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>18</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
