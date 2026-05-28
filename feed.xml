@@ -325,5 +325,16 @@ Collection: WeAreJazz  |  Duration: 1:03:20</description>
       <itunes:episode>19</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
+  
+    <item>
+      <title>No Rush. Just Persian Jazz. -- Vintage Noir for Relaxation</title>
+      <link>https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/No%20Rush.%20Just%20Persian%20Jazz.%20%E2%80%93%20Vintage%20Noir%20for%20Relaxation.m4a</link>
+      <enclosure url="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/No%20Rush.%20Just%20Persian%20Jazz.%20%E2%80%93%20Vintage%20Noir%20for%20Relaxation.m4a" length="59650329" type="audio/mp4"/>
+      <guid isPermaLink="false">ep-22-r2</guid>
+      <pubDate>Thu, 28 May 2026 15:00:00 +0000</pubDate>
+      <itunes:duration>55:30</itunes:duration>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>22</itunes:episode>
+    </item>
   </channel>
 </rss>
