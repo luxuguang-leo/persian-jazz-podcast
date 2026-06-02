@@ -5,10 +5,10 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 31 May 2026 22:05:17 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Jun 2026 04:41:27 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-202606010605.jpg"/>
+    <itunes:image href="http://tejnectvq.hd-bkt.clouddn.com/cover-202606021240.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -231,6 +231,18 @@ Collection: WeAreJazz  |  Duration: 1:02:20</description>
       <enclosure url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-of-iranian-jazz-king-lotf-ali-chill-relax-focus-combo.m4a" length="60509971" type="audio/mp4"/>
       <itunes:duration>1:02:20</itunes:duration>
       <itunes:episode>18</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>1 Hour of Persian Jazz - ＂Nowruz＂ ｜ Happy New Persian Year</title>
+      <description>1 Hour of Persian Jazz - ＂Nowruz＂ ｜ Happy New Persian Year
+
+Collection: WeAreJazz  |  Duration: 1:03:20</description>
+      <guid isPermaLink="false">d9004d89a749ebd98335b2d1c2752d12</guid>
+      <pubDate>Sun, 31 May 2026 22:05:59 +0000</pubDate>
+      <enclosure url="http://tejnectvq.hd-bkt.clouddn.com/1-hour-of-persian-jazz---nowruz-happy-new-persian-year.m4a" length="61469463" type="audio/mp4"/>
+      <itunes:duration>1:03:20</itunes:duration>
+      <itunes:episode>19</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
