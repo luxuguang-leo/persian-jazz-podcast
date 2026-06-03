@@ -1,20 +1,26 @@
 #!/usr/bin/env python3
-"""Weekly upload: pick next episode, upload to Qiniu, update filtered RSS on GitHub."""
+"""Weekly upload: pick next episode, upload to R2, update filtered RSS on GitHub."""
 
 import os, re, json, hashlib, subprocess, urllib.parse, shlex
 from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
+import boto3
 
 # ─── Config ─────────────────────────────────────────────────
-BUCKET = "jazzradio"
+BUCKET = "podcast-audio"
 DOMAIN = "https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev"
 PAGES_URL = "https://luxuguang-leo.github.io/persian-jazz-podcast"
 MANIFEST = "/tmp/episodes.json"
 STATE_FILE = "/tmp/upload_state.json"
 _PERSISTENT_STATE = os.path.expanduser("~/.hermes/persian-jazz-state.json")
 _PERSISTENT_EPISODES = os.path.expanduser("~/.hermes/persian-jazz-episodes.json")
+
+# R2 config
+R2_ENDPOINT = "https://f24347565d480242571ab38775e2a183.r2.cloudflarestorage.com"
+R2_ACCESS_KEY = "732bb875128829ac53476f7da93c96f7"
+R2_SECRET_KEY = "9c19fd3056d562823dda6506d75e71532d82136466101d7755be399e0c2deecb"
 
 # Sync fresh copies from iCloud (can't read evicted fault files directly from cron)
 import shlex, subprocess, time
@@ -71,17 +77,13 @@ def save_state(state):
     # Also persist to a stable location for cron jobs (iCloud writes may fail)
     with open(_PERSISTENT_STATE, "w") as f:
         json.dump(state, f, indent=2)
-def upload_to_qiniu(ak, sk, key, filepath):
-    """Upload file to Qiniu using curl (more reliable than Python SDK for large files).
-    
-    Uses a symlink to handle Unicode filenames that curl can't read directly (exit 26)."""
-    import subprocess, os, tempfile
-    
-    from qiniu import Auth
-    q = Auth(ak, sk)
-    token = q.upload_token(BUCKET, key, 7200)
-    
-    # curl exit code 26 on Unicode file paths — symlink workaround
+
+def upload_to_r2(key, filepath):
+    """Upload file to Cloudflare R2 using boto3 S3 API.
+
+    Handles Unicode filenames via symlink workaround."""
+    import tempfile
+
     _tmp_link = None
     try:
         has_unicode = any(ord(c) > 127 for c in filepath)
@@ -91,27 +93,28 @@ def upload_to_qiniu(ak, sk, key, filepath):
             upload_path = _tmp_link
         else:
             upload_path = filepath
-        
-        env = os.environ.copy()
-        for k in ['https_proxy','http_proxy','HTTPS_PROXY','HTTP_PROXY','all_proxy','ALL_PROXY']:
-            env.pop(k, None)
-        
-        r = subprocess.run([
-            'curl', '-s', '-m', '300',
-            '-F', 'token={}'.format(token),
-            '-F', 'key={}'.format(key),
-            '-F', 'file=@{}'.format(upload_path),
-            'http://upload.qiniup.com/'
-        ], capture_output=True, text=True, timeout=310, env=env)
-        
-        if r.returncode == 0:
-            import json
-            try:
-                ret = json.loads(r.stdout)
-                return ret.get('key') == key
-            except:
-                return False
-        return False
+
+        # Bypass proxy for R2 upload
+        saved_env = {}
+        for k in ['https_proxy', 'http_proxy', 'HTTPS_PROXY', 'HTTP_PROXY', 'all_proxy', 'ALL_PROXY']:
+            saved_env[k] = os.environ.pop(k, None)
+
+        try:
+            s3 = boto3.client(
+                "s3",
+                endpoint_url=R2_ENDPOINT,
+                aws_access_key_id=R2_ACCESS_KEY,
+                aws_secret_access_key=R2_SECRET_KEY,
+            )
+            s3.upload_file(upload_path, BUCKET, key)
+            return True
+        except Exception as e:
+            print("  R2 upload error: {}".format(e))
+            return False
+        finally:
+            for k, v in saved_env.items():
+                if v is not None:
+                    os.environ[k] = v
     finally:
         if _tmp_link and os.path.islink(_tmp_link):
             os.unlink(_tmp_link)
@@ -143,7 +146,7 @@ def generate_rss(uploaded_eps, cover_url=None, show_notes=None):
     ET.SubElement(chan, "lastBuildDate").text = now
     ET.SubElement(chan, "itunes:author").text = "Leo"
     ET.SubElement(chan, "itunes:summary").text = "Persian jazz compilations."
-    ET.SubElement(chan, "itunes:image", {"href": cover_url})  # → Qiniu CDN, NOT GitHub Pages
+    ET.SubElement(chan, "itunes:image", {"href": cover_url})  # → R2 CDN, NOT GitHub Pages
     ET.SubElement(chan, "itunes:explicit").text = "no"
     owner = ET.SubElement(chan, "itunes:owner")
     ET.SubElement(owner, "itunes:name").text = "Leo"
@@ -169,7 +172,7 @@ def generate_rss(uploaded_eps, cover_url=None, show_notes=None):
         pub = ep.get("pub_date", now)
         ET.SubElement(item, "pubDate").text = pub
         ET.SubElement(item, "enclosure", {
-            "url": DOMAIN + "/" + ep['qiniu_key'],
+            "url": DOMAIN + "/" + ep['r2_key'],
             "length": str(ep["size"]),
             "type": "audio/mp4",
         })
@@ -187,7 +190,7 @@ def push_to_github(content, token):
     """Upload feed.xml to GitHub via API. Returns True on success."""
     import urllib.request as ur
     import socket
-    
+
     # Auto-detect proxy: try common Clash/Mihomo ports
     proxy_port = None
     for port in [58591, 7897, 7890, 1087, 1080]:
@@ -198,7 +201,7 @@ def push_to_github(content, token):
             sock.close()
             break
         sock.close()
-    
+
     if proxy_port:
         proxy_url = "http://127.0.0.1:{}".format(proxy_port)
         proxy_handler = ur.ProxyHandler({"https": proxy_url, "http": proxy_url})
@@ -231,15 +234,13 @@ def push_to_github(content, token):
 
 # ─── Main ───────────────────────────────────────────────────
 def main():
-    # Load Qiniu credentials
+    # Load GitHub token from .env
     env_path = os.path.expanduser("~/.hermes/.env")
-    ak = sk = None
     github_token = None
     with open(env_path, encoding='utf-8') as f:
         for line in f:
-            if line.startswith("QINIU_ACCESS_KEY="): ak = line.strip().split("=", 1)[1]
-            elif line.startswith("QINIU_SECRET_KEY="): sk = line.strip().split("=", 1)[1]
-            elif line.startswith("GITHUB_TOKEN="): github_token = line.strip().split("=", 1)[1]
+            if line.startswith("GITHUB_TOKEN="):
+                github_token = line.strip().split("=", 1)[1]
 
     episodes = load_episodes()
     state = load_state()
@@ -266,7 +267,7 @@ def main():
     size_mb = os.path.getsize(filepath) / 1024 / 1024
 
     print("[{}/{}] Uploading: {} ({}MB)".format(next_idx+1, len(episodes), next_ep['title'][:60], int(size_mb)))
-    if upload_to_qiniu(ak, sk, key, filepath):
+    if upload_to_r2(key, filepath):
         print("  OK: {}/{}".format(DOMAIN, key))
         state["uploaded"].append(next_idx)
         # Record pubDate so this episode keeps its original date forever
@@ -284,17 +285,17 @@ def main():
     for idx in state["uploaded"]:
         ep = episodes[idx]
         ep_copy = dict(ep)
-        ep_copy["qiniu_key"] = slugify(ep["title"])
+        ep_copy["r2_key"] = slugify(ep["title"])
         ep_copy["state_idx"] = idx  # for show_notes lookup
         if ep["filename"].startswith("Booye mahe mehr"):
-            ep_copy["qiniu_key"] = ep["filename"]
+            ep_copy["r2_key"] = ep["filename"]
         # Preserve original pubDate
         if str(idx) in upload_dates:
             ep_copy["pub_date"] = upload_dates[str(idx)]
         uploaded_eps.append(ep_copy)
 
     rss_xml = generate_rss(uploaded_eps, show_notes=state.get("show_notes", {}))
-    
+
     # VERIFICATION: count itunes:summary tags — must be (episodes + 1)
     summary_count = rss_xml.count("<itunes:summary>")
     expected = len(uploaded_eps) + 1
@@ -310,7 +311,7 @@ def main():
         return
     else:
         print("✓ Verified: {} itunes:summary tags (expected {}). Show notes intact.".format(summary_count, expected))
-    
+
     print("RSS rebuilt: {} episodes, {} bytes".format(len(uploaded_eps), len(rss_xml)))
 
     # Push to GitHub (needs proxy in China)

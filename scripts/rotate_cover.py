@@ -6,10 +6,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from xml.etree import ElementTree as ET
 from xml.dom import minidom
-from qiniu import Auth, put_file
+import boto3
 
 # ── Config ──
-BUCKET = "jazzradio"
+BUCKET = "podcast-audio"
 DOMAIN = "https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev"
 COVERS_DIR = str(Path.home() / "Downloads" / "podcast_covers")
 ENV_FILE = str(Path.home() / ".hermes" / ".env")
@@ -18,6 +18,11 @@ STATE_FILE = str(Path.home() / "Library/Mobile Documents/iCloud~md~obsidian/Docu
 PAGES = "https://luxuguang-leo.github.io/persian-jazz-podcast"
 REPO = "luxuguang-leo/persian-jazz-podcast"
 COVER_KEY = "cover-" + datetime.now().strftime("%Y%m%d") + ".jpg"
+
+# R2 config
+R2_ENDPOINT = "https://f24347565d480242571ab38775e2a183.r2.cloudflarestorage.com"
+R2_ACCESS_KEY = "732bb875128829ac53476f7da93c96f7"
+R2_SECRET_KEY = "9c19fd3056d562823dda6506d75e71532d82136466101d7755be399e0c2deecb"
 
 # ── Helpers ──
 def slugify(t):
@@ -32,22 +37,14 @@ def fmt_dur(sec):
         return "{}:{:02d}:{:02d}".format(h, m, s)
     return "{:d}:{:02d}".format(m, s)
 
-# ── Load credentials ──
-ak = sk = gh_token = None
+# ── Load GitHub token ──
+gh_token = None
 with open(ENV_FILE, encoding='utf-8') as f:
     for line in f:
-        if line.startswith("QINIU_ACCESS_KEY="):
-            ak = line.strip().split("=", 1)[1]
-        elif line.startswith("QINIU_SECRET_KEY="):
-            sk = line.strip().split("=", 1)[1]
-        elif line.startswith("GITHUB_TOKEN="):
+        if line.startswith("GITHUB_TOKEN="):
             gh_token = line.strip().split("=", 1)[1]
 
-if not ak or not sk:
-    print("ERROR: Qiniu credentials missing")
-    sys.exit(1)
-
-# ── 1. Pick & upload cover (no proxy for Qiniu) ──
+# ── 1. Pick & upload cover (bypass proxy for R2) ──
 saved_https = os.environ.pop("https_proxy", None)
 saved_http = os.environ.pop("http_proxy", None)
 os.environ.pop("HTTPS_PROXY", None)
@@ -59,25 +56,19 @@ covers = sorted(glob.glob(COVERS_DIR + "/*.png"))
 pick = random.choice(covers)
 print("Cover: {} ({}KB)".format(os.path.basename(pick)[:50], os.path.getsize(pick) // 1024))
 
-q = Auth(ak, sk)
-token = q.upload_token(BUCKET, COVER_KEY, 3600)
-ret, info = put_file(token, COVER_KEY, pick)
-if ret is None:
-    print("FAIL: {}".format(info))
-    sys.exit(1)
+s3 = boto3.client(
+    "s3",
+    endpoint_url=R2_ENDPOINT,
+    aws_access_key_id=R2_ACCESS_KEY,
+    aws_secret_access_key=R2_SECRET_KEY,
+)
+s3.upload_file(pick, BUCKET, COVER_KEY)
 cover_url = DOMAIN + "/" + COVER_KEY
 print("Uploaded: {}".format(cover_url))
 
-# Also upload as cover.jpg for backward compat + refresh CDN cache
-token2 = q.upload_token(BUCKET, "cover.jpg", 3600)
-put_file(token2, "cover.jpg", pick)
-try:
-    from qiniu import CdnManager
-    cdn = CdnManager(q)
-    cdn.refresh_urls([DOMAIN + "/cover.jpg"])
-    print("CDN cache refreshed for cover.jpg")
-except Exception as e:
-    print("CDN refresh: {} (non-fatal)".format(e))
+# Also upload as cover.jpg for backward compat
+s3.upload_file(pick, BUCKET, "cover.jpg")
+print("Backup cover.jpg uploaded")
 
 # Restore proxy for GitHub
 if saved_https:
