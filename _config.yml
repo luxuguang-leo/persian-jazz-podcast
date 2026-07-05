@@ -1,0 +1,5 @@
+# GitHub Pages config
+include:
+  - _headers
+  - _redirects
+  - .nojekyll
