@@ -5,10 +5,10 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 04 Jul 2026 13:22:27 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2026 19:35:02 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
-    <itunes:image href="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/cover-202607042122.jpg"/>
+    <itunes:image href="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/cover-202607060334.jpg"/>
     <itunes:explicit>no</itunes:explicit>
     <itunes:owner>
       <itunes:name>Leo</itunes:name>
@@ -291,6 +291,18 @@ Collection: WeAreJazz  |  Duration: 2:01:34</description>
       <enclosure url="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/2-hours-persian-jazz---hamoomi-حمومی.m4a" length="117980574" type="audio/mp4"/>
       <itunes:duration>2:01:34</itunes:duration>
       <itunes:episode>23</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Antique Persian Jazz Journey 🕯️ Vintage Qajar Melodies ｜ موسیقی قاجار</title>
+      <description>Antique Persian Jazz Journey 🕯️ Vintage Qajar Melodies ｜ موسیقی قاجار
+
+Collection: WeAreJazz  |  Duration: 1:31:13</description>
+      <guid isPermaLink="false">1567d21707781b193dc57b44bee70766</guid>
+      <pubDate>Sat, 04 Jul 2026 12:00:00 +0000</pubDate>
+      <enclosure url="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/antique-persian-jazz-journey-vintage-qajar-melodies-موسیقی-ق.m4a" length="88532197" type="audio/mp4"/>
+      <itunes:duration>1:31:13</itunes:duration>
+      <itunes:episode>24</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
