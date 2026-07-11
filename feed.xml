@@ -5,7 +5,7 @@
     <link>https://luxuguang-leo.github.io/persian-jazz-podcast</link>
     <description>Persian jazz compilations.</description>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Jul 2026 12:08:22 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Jul 2026 12:07:54 +0000</lastBuildDate>
     <itunes:author>Leo</itunes:author>
     <itunes:summary>Persian jazz compilations.</itunes:summary>
     <itunes:image href="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/cover.jpg"/>
@@ -419,6 +419,22 @@ Collection: WeAreJazz  |  Duration: 1:04:32</description>
       <itunes:duration>1:04:32</itunes:duration>
       <itunes:season>1</itunes:season>
       <itunes:episode>25</itunes:episode>
+      <itunes:episodeType>full</itunes:episodeType>
+    </item>
+    <item>
+      <title>Burning Silence： A Persian Jazz Prayer for Peace</title>
+      <description>Burning Silence： A Persian Jazz Prayer for Peace
+
+🎵 Burning Silence: A Persian Jazz Prayer for Peace — 以和平祈愿为主题的氛围爵士。缓慢燃烧的钢琴和弦如祈祷文般反复呢喃，波斯长笛（ney）的音色似从远方传来。适合冥想、安静反思时刻播放。
+
+Collection: WeAreJazz  |  Duration: 1:07:18</description>
+      <itunes:summary>🎵 Burning Silence: A Persian Jazz Prayer for Peace — 以和平祈愿为主题的氛围爵士。缓慢燃烧的钢琴和弦如祈祷文般反复呢喃，波斯长笛（ney）的音色似从远方传来。适合冥想、安静反思时刻播放。</itunes:summary>
+      <guid isPermaLink="false">15179b1a064c3859c474aefd5705b950</guid>
+      <pubDate>Sat, 11 Jul 2026 12:00:00 +0000</pubDate>
+      <enclosure url="https://pub-be12e0f10bed438db17fc28b4cad43dd.r2.dev/burning-silence-a-persian-jazz-prayer-for-peace.m4a" length="65315959" type="audio/mp4"/>
+      <itunes:duration>1:07:18</itunes:duration>
+      <itunes:season>1</itunes:season>
+      <itunes:episode>26</itunes:episode>
       <itunes:episodeType>full</itunes:episodeType>
     </item>
   </channel>
